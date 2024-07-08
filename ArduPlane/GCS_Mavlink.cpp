@@ -36,6 +36,7 @@ MAV_MODE GCS_MAVLINK_Plane::base_mode() const
         break;
 #endif
     case Mode::Number::STABILIZE:
+    case Mode::Number::TVC:
     case Mode::Number::FLY_BY_WIRE_A:
     case Mode::Number::AUTOTUNE:
     case Mode::Number::FLY_BY_WIRE_B:

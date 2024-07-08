@@ -503,12 +503,18 @@ const AP_Param::Info Plane::var_info[] = {
     // @Description: Flight mode for switch position 6 (1750 to 2049)
     GSCALAR(flight_mode6,           "FLTMODE6",       FLIGHT_MODE_6),
 
+    // @Param: FLTMODE6
+    // @CopyFieldsFrom: FLTMODE1
+    // @DisplayName: FlightMode6
+    // @Description: Flight mode for switch position 6 (1750 to 2049)
+    //GSCALAR(flight_mode7,           "FLTMODE7",       FLIGHT_MODE_7),
+
     // @Param: INITIAL_MODE
     // @DisplayName: Initial flight mode
     // @Description: This selects the mode to start in on boot. This is useful for when you want to start in AUTO mode on boot without a receiver.
     // @CopyValuesFrom: FLTMODE1
     // @User: Advanced
-    GSCALAR(initial_mode,        "INITIAL_MODE",     Mode::Number::MANUAL),
+    GSCALAR(initial_mode,        "INITIAL_MODE",     Mode::Number::TVC),
 
     // @Param: ROLL_LIMIT_DEG
     // @DisplayName: Maximum Bank Angle

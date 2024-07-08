@@ -39,6 +39,7 @@ void GCS_Plane::update_vehicle_sensor_status_flags(void)
         break;
 
     case Mode::Number::STABILIZE:
+    case Mode::Number::TVC:
     case Mode::Number::FLY_BY_WIRE_A:
     case Mode::Number::AUTOTUNE:
 #if HAL_QUADPLANE_ENABLED

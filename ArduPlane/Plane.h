@@ -29,6 +29,8 @@
 #include <stdarg.h>
 #include <stdio.h>
 
+//#include <Adafruit_NeoPixel/Adafruit_NeoPixel.h>
+
 #include <AP_HAL/AP_HAL.h>
 #include <AP_Common/AP_Common.h>
 #include <AP_Airspeed/AP_Airspeed.h>
@@ -148,6 +150,7 @@ public:
     friend class Mode;
     friend class ModeCircle;
     friend class ModeStabilize;
+    friend class ModeTVC;
     friend class ModeTraining;
     friend class ModeAcro;
     friend class ModeFBWA;
@@ -273,6 +276,7 @@ private:
 
     ModeCircle mode_circle;
     ModeStabilize mode_stabilize;
+    ModeTVC mode_tvc;
     ModeTraining mode_training;
     ModeAcro mode_acro;
     ModeFBWA mode_fbwa;
@@ -873,6 +877,7 @@ private:
     void rangefinder_terrain_correction(float &height);
 #endif
     void stabilize();
+    //void tvc();
     void calc_throttle();
     void calc_nav_roll();
     void calc_nav_pitch();

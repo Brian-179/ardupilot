@@ -16,6 +16,9 @@ Mode *Plane::mode_from_mode_num(const enum Mode::Number num)
     case Mode::Number::STABILIZE:
         ret = &mode_stabilize;
         break;
+    case Mode::Number::TVC:
+        ret = &mode_tvc;
+        break;
     case Mode::Number::TRAINING:
         ret = &mode_training;
         break;

@@ -54,6 +54,7 @@ public:
 #if HAL_QUADPLANE_ENABLED
         LOITER_ALT_QLAND = 25,
 #endif
+        TVC           = 69,
     };
 
     // Constructor
@@ -462,6 +463,36 @@ public:
 private:
     void stabilize_stick_mixing_direct();
 
+};
+
+class ModeTVC : public Mode
+{
+public:
+
+    Number mode_number() const override { return Number::TVC; }
+    const char *name() const override { return "TVC"; }
+    const char *name4() const override { return "TVC"; }
+
+    // methods that affect movement of the vehicle in this mode
+
+    void update() override;
+
+/*
+    bool requires_GPS() const override { return false; }
+    bool has_manual_throttle() const override { return false; }
+    bool allows_arming(bool from_gcs) const override { return true; };
+    bool is_autopilot() const override { return true; }
+    bool does_auto_throttle() const override { return true; }
+    bool mode_allows_autotuning() const override { return true; }
+*/
+
+    bool init();
+
+    void run() override;
+
+private:
+    //void setup();
+    void setup();
 };
 
 class ModeTraining : public Mode
